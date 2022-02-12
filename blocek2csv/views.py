@@ -16,7 +16,6 @@ def items_csv(request, uid):
 		#data = check_recipt('O-318500C780EA418D8500C780EA018D95')
 		pass
 	else:
-		#data = check_recipt(uid)
 		data = over_doklad(uid)
 
 		response = HttpResponse(content_type='text/csv')
@@ -26,7 +25,9 @@ def items_csv(request, uid):
 		response.write(u'\ufeff'.encode('utf8'))
 		writer = csv.writer(response, delimiter=';' , dialect='excel')
 
-		writer.writerow(["Dátum a čas","Položka","Množstvo","Cena za MJ","Cena za MJ bez DPH","Cena celkom","Cena celkom bez DPH","DPH       ","Predajca","Predajca IČO","Predajca DIČ","Predajca IČ-DPH"])
+		writer.writerow(["Dátum a čas","Položka","Množstvo","Cena za MJ","Cena za MJ bez DPH",\
+				 "Cena celkom","Cena celkom bez DPH","DPH       ","Predajca",\
+				 "Predajca IČO","Predajca DIČ","Predajca IČ-DPH"])
 
 		items = data['receipt']['items']
 
@@ -73,8 +74,6 @@ def home(request):
 		form = ReceiptUidManual(request.POST)
 
 		if form.is_valid():
-
-			print(form.cleaned_data['receipt_uid'])
 
 			uid = form.cleaned_data['receipt_uid']
 			len_uid = len(uid)
