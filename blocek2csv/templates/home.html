@@ -1,0 +1,45 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q901JB5RWL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Q901JB5RWL');
+</script>
+
+<h3>Vitaj</h3>	
+
+<p>Zadaj 34 miestny kód z bločka. Na tvojom bločku z obchodu by sa mal nachádať na spodku, pri QRkóde s označením "UID"</p>
+<p>V prípade, že máš UID napríklad "O-318500C780EA418D8500B780EA018D95", tak prvý znak je "O" ako Oto, nasleduje pomlčka a všetky zvyšné znaky O/0 sú nula.</p>
+
+
+<form method='POST'>
+	{% csrf_token %}
+	{{ form.as_p }}
+	<input type="submit" class="btn btn-secondary" value="Vyexportuj do CSV" name="tlacitko_potvrd">
+</form>
+
+<p>V prípade otázok alebo návrhov ma môžeš <a href="mailto:marcelsuleiman@gmail.com"> kontaktovať</a></p>
+
+
+<!--
+<center>
+	<p>Ako pravdou je, že by o mohlo fungovat aj takto ..., ale to by som musel platiť hosting a keby som platil hosting, toto tu by nebolo zadarmo. :)</p>
+	<object style="height: 390px; width: 640px">
+		<param name="movie" value="http://www.youtube.com/v/z-pcBIShykg?version=3">
+		<param name="allowFullScreen" value="true">
+		<param name="allowScriptAccess" value="always">
+		<embed src="http://www.youtube.com/v/z-pcBIShykg?version=3" type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always" width="640" height="390">
+	</object>
+	<br>
+	<a href="https://www.youtube.com/watch?v=z-pcBIShykg">link</a>
+</center>
+-->
+
+{% endblock %}
