@@ -6,6 +6,7 @@ Aplikacia nacita data z blocka a vyexportuje data do CSV formatu
 
 
 site down:
+```
 2022-03-26T08:41:26.124887+00:00 app[web.1]: [2022-03-26 08:41:26 +0000] [10] [INFO] Worker exiting (pid: 10)
 2022-03-26T08:41:26.124952+00:00 app[web.1]: [2022-03-26 08:41:26 +0000] [4] [INFO] Handling signal: term
 2022-03-26T08:41:26.325636+00:00 app[web.1]: [2022-03-26 08:41:26 +0000] [4] [INFO] Shutting down: Master
@@ -16,5 +17,6 @@ site down:
 2022-03-28T01:11:12.057112+00:00 heroku[router]: at=info code=H82 desc="Free app running time quota exhausted" method=GET path="/" host=blocek2csv.herokuapp.com request_id=d382ead6-47c9-4320-8358-a6b75819530b fwd="173.252.95.119" dyno= connect= service= status=503 bytes= protocol=https
 2022-03-28T05:54:33.892505+00:00 heroku[router]: at=info code=H82 desc="Free app running time quota exhausted" method=GET path="/" host=blocek2csv.herokuapp.com request_id=3f5c0877-d3c6-4d05-add6-af6b24e2304b fwd="188.167.250.145" dyno= connect= service= status=503 bytes= protocol=https
 2022-03-28T05:54:35.417744+00:00 heroku[router]: at=info code=H82 desc="Free app running time quota exhausted" method=GET path="/favicon.ico" host=blocek2csv.herokuapp.com request_id=01095e1a-7056-4b18-8689-7e878a9dc6d3 fwd="188.167.250.145" dyno= connect= service= status=503 bytes= protocol=https
+```
 
 očividne koncom mesiaca sa mi minie povolený free limit na "dyno hours" a stránka je down. Ale len do konca mesiaca, od prvého by to malo automaticky fungovať.
