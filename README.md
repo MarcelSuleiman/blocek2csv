@@ -4,6 +4,8 @@ live: [link to live preview](https://blocek2csv.herokuapp.com/)
 
 Aplikacia nacita data z blocka a vyexportuje data do CSV formatu
 
+[ide to aj cez skenovanie QR kodov cez webkameru](https://youtu.be/z-pcBIShykg)
+
 
 site down:
 ```
